@@ -1,6 +1,6 @@
 import { renderToString } from 'wc-compiler';
 
-const { html } = await renderToString(new URL("../public/CustomComponent.js", import.meta.url))
+const { html } = await renderToString(new URL("../public/footer.js", import.meta.url))
 
 function index() {
   return (

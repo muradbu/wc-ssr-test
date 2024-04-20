@@ -1,15 +1,15 @@
 import { Elysia } from "elysia";
 import { html } from "@elysiajs/html";
 import Index from './index'
-import { staticPlugin } from '@elysiajs/static'
 
 const app = new Elysia()
   .use(html())
-  .use(staticPlugin())
-  .get("/", ({ path }) => {
-    console.log(path);
-    return <Index />
+  .get("/public/CustomComponent.js", () => {
+    console.log("Got the request!");
+
+    return Bun.file('public/CustomComponent.js')
   })
+  .get("/", () => <Index />)
   .listen(3000);
 
 console.log(

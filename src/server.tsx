@@ -6,7 +6,10 @@ import { staticPlugin } from '@elysiajs/static'
 const app = new Elysia()
   .use(html())
   .use(staticPlugin())
-  .get("/", () => <Index />)
+  .get("/", ({ path }) => {
+    console.log(path);
+    <Index />
+  })
   .listen(3000);
 
 console.log(

@@ -12,6 +12,6 @@ COPY tsconfig.json .
 # COPY public public
 
 ENV NODE_ENV production
-CMD ["bun", "src/server.ts"]
+CMD ["bun", "src/server.tsx"]
 
 EXPOSE 3000

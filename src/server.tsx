@@ -8,7 +8,7 @@ const app = new Elysia()
   .use(staticPlugin())
   .get("/", ({ path }) => {
     console.log(path);
-    <Index />
+    return <Index />
   })
   .listen(3000);
 
